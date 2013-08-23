@@ -1,6 +1,8 @@
 Athirdplace::Application.routes.draw do
-  root 'users#index'
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  root 'users#index', controllers: { registrations: 'users/registrations' }
   get "users/index"
   get "users/show"
   # The priority is based upon order of creation: first created -> highest priority.
