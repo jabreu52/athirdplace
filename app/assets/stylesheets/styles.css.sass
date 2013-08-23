@@ -1,0 +1,15 @@
+// MIXINS
+@mixin button-shadow($color)
+  box-shadow: 0 2px 0 darken($color, 10%)
+
+// GLOBAL
+ul
+  list-style: none
+
+.group:after
+  content: ""
+  display: table
+  clear: both
+
+.button
+  @include button-shadow($primary-color)
